@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: assurance.cab
+        server: 54.36.98.118
         username: assurance.cab_16vhm9u5z1u
         password: YJnJ7!6ggl&x2ryj
         port: 50254
