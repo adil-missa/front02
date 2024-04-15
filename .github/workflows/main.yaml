@@ -15,4 +15,5 @@ jobs:
         username: assurance.cab_16vhm9u5z1u
         password: YJnJ7!6ggl&x2ryj
         port: 50254
+        protocol: ftps
         server-dir: ./
