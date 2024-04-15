@@ -1,10 +1,16 @@
-- name: deploy to server
-        uses: AEnterprise/rsync-deploy@v1.0.2
-        env:
-          DEPLOY_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-e -c -r --delete"
-          SERVER_PORT: ${{ secrets.SERVER_PORT }}
-          FOLDER: "./"
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          USERNAME: ${{ secrets.USERNAME }}
-          SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftp.assurance.cab
+        username: assurance.cab_16vhm9u5z1u
+        password: YJnJ7!6ggl&x2ryj
